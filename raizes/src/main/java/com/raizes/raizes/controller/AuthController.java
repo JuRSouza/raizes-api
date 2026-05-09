@@ -21,13 +21,17 @@ public class AuthController {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
+    @Autowired
+    private org.springframework.security.crypto.password.PasswordEncoder passwordEncoder;
+
     @PostMapping("/login")
     @ResponseStatus(HttpStatus.OK)
     public Map<String, String> login(@RequestBody LoginRequest request) {
 
         Optional<Usuario> usuario = usuarioRepository.findByEmail(request.getEmail());
 
-        if (usuario.isEmpty() || !usuario.get().getSenha().equals(request.getSenha())) {
+        if (usuario.isEmpty() ||
+                !passwordEncoder.matches(request.getSenha(), usuario.get().getSenha())) {
             throw new RuntimeException("Credenciais inválidas");
         }
 
