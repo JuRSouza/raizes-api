@@ -27,4 +27,24 @@ public class JwtService {
                 .signWith(key)
                 .compact();
     }
+
+    public String extrairUsername(String token) {
+
+        SecretKey key = Keys.hmacShaKeyFor(
+                SECRET.getBytes(StandardCharsets.UTF_8)
+        );
+
+        return Jwts.parser()
+                .verifyWith(key)
+                .build()
+                .parseSignedClaims(token)
+                .getPayload()
+                .getSubject();
+    }
+
+    public boolean isTokenValido(String token, org.springframework.security.core.userdetails.UserDetails userDetails) {
+
+        String username = extrairUsername(token);
+        return username.equals(userDetails.getUsername());
+    }
 }

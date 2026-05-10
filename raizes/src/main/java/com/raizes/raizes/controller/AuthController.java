@@ -30,6 +30,8 @@ public class AuthController {
 
         Optional<Usuario> usuario = usuarioRepository.findByEmail(request.getEmail());
 
+        System.out.println(passwordEncoder.encode("123456"));
+        System.out.println(passwordEncoder.matches("123456", usuario.get().getSenha()));
         if (usuario.isEmpty() ||
                 !passwordEncoder.matches(request.getSenha(), usuario.get().getSenha())) {
             throw new RuntimeException("Credenciais inválidas");
