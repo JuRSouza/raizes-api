@@ -19,6 +19,7 @@ public class PedidoController {
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public Pedido criar(@RequestBody Pedido pedido) {
         return service.salvar(pedido);
     }

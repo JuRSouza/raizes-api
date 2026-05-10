@@ -1,6 +1,5 @@
 package com.raizes.raizes.config;
 
-
 import org.springframework.context.annotation.Lazy;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
