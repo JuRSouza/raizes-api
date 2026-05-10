@@ -37,6 +37,10 @@ public class PedidoService {
 
     public Pedido atualizarStatus(Long id, String status) {
 
+        if (status == null || status.isBlank()) {
+            throw new RuntimeException("status é obrigatório");
+        }
+
         Pedido pedido = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Pedido não encontrado"));
 
