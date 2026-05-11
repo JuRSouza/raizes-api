@@ -1,0 +1,149 @@
+{
+  "info": {
+    "_postman_id": "34570b65-dce5-411f-90dd-15d7f83f4e67",
+    "name": "Uninter_Raizes",
+    "description": "Raizes",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "30843564"
+  },
+  "item": [
+    {
+      "name": "POST login",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"admin@raizes.com\",\r\n  \"senha\": \"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST Criar pedido",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkByYWl6ZXMuY29tIiwiaWF0IjoxNzc4NDUyMDQzLCJleHAiOjE3Nzg1Mzg0NDN9.tc3OsfahVyVxL1aNZU47qF3lZkwr27aSvLfLJez2Bww",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"canalPedido\": \"APP\",\r\n  \"total\": 21.00\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/pedidos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "pedidos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST Pagamento mock",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkByYWl6ZXMuY29tIiwiaWF0IjoxNzc4NDUyMDQzLCJleHAiOjE3Nzg1Mzg0NDN9.tc3OsfahVyVxL1aNZU47qF3lZkwr27aSvLfLJez2Bww",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"pedidoId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/pagamentos/mock",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "pagamentos",
+            "mock"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET Listar pedidos",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkByYWl6ZXMuY29tIiwiaWF0IjoxNzc4NDUyMDQzLCJleHAiOjE3Nzg1Mzg0NDN9.tc3OsfahVyVxL1aNZU47qF3lZkwr27aSvLfLJez2Bww",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/pedidos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "pedidos"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
