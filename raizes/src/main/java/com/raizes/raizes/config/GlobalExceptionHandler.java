@@ -1,3 +1,4 @@
+// classe de exceções
 package com.raizes.raizes.config;
 
 import jakarta.servlet.http.HttpServletRequest;
