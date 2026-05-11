@@ -37,4 +37,8 @@ Antes de executar, é necessário ter instalado:
 ```bash
 git clone https://github.com/jursouza/raizes-api.git
 ```
+## Swagger/OpenAPI: 
+
+Swagger/OpenAPI: dependência adicionada ao projeto via Springdoc.
+Na versão entregue, a documentação automática não ficou acessível em ambiente local, porém os endpoints implementados estão documentados no relatório e validados por coleção Postman.
 
