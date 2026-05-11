@@ -35,6 +35,6 @@ Antes de executar, é necessário ter instalado:
 ### 1. Clonar o repositório
 
 ```bash
-git clone https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git
+git clone https://github.com/jursouza/raizes-api.git
 ```
 
